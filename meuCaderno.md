@@ -15,3 +15,30 @@ document.querySelector('.selector').textContent;
 ```
 document.querySelector('.content').textContent = 'Comprar maçã';
 ```
+
+# Aula02 - Comportamento do formulário
+## Escutando Eventos:  
+- Colocar tag script no final para chamar o js:  
+```
+<script src="arquivo.js"></script>
+```
+- ```addEventListener('evento', 'funcao');``` Método que escuta uma tag determinada.  
+```
+const tarefa = document.querySelector('.content');
+tarefa.addEventListener('click', ()=>{console.log('fui clicado')});
+```
+## Capturando valor do input:  
+```
+function teste(){
+	const input = document.querySelector('.form__input').value;
+	console.log(input);
+}
+novaTarefa.addEventListener('click', teste);
+```
+## Comportamento do formulário:  
+- ```preventDefault();``` Serve para não ocorrer o refresh.  
+```
+function teste(evento){
+	evento.preventDefault();
+}
+```
