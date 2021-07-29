@@ -42,3 +42,23 @@ function teste(evento){
 	evento.preventDefault();
 }
 ```
+
+# Aula03 - Adicionar item na lista
+## Adicionando Tarefa:  
+```insertAdjacentHTML``` Melhor substituto para innerHTML:  
+```
+tarefa.insertAdjacentHTML('posicao', conteudo);
+```
+## Criando elemento:  
+- ```createElement();``` Para criar um elemento.  
+```
+const tarefa = document.createElement('li');
+```
+- ```appendChild()``` Serve para posicionar a tag como filho de outra tag determinada.  
+```
+lista.appendChild(tarefa);
+```
+- ```classList.add('nomeDaClasse')``` Serve para por uma classe em uma tag:  
+```
+tarefa.classList.add('task');
+```
