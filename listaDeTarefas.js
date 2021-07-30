@@ -10,8 +10,21 @@ function teste(evento){
     const conteudo = `<p class="content">${input}</p>`;
     li.insertAdjacentHTML('beforeend', conteudo);
 
+    li.appendChild(BotaoConclui());
     ul.appendChild(li);
 }
 
 const novaTarefa = document.querySelector('.form-button');
 novaTarefa.addEventListener('click', teste);
+
+
+function BotaoConclui(){
+    const botaoConclui = document.createElement('button');
+    botaoConclui.innerText = 'concluir';
+    botaoConclui.classList.add('check-button');
+    botaoConclui.addEventListener('click', () => {
+        console.log('Fui clicado');
+    });
+
+    return botaoConclui;
+}
