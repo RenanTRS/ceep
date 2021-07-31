@@ -11,6 +11,7 @@ function teste(evento){
     li.insertAdjacentHTML('beforeend', conteudo);
 
     li.appendChild(BotaoConclui());
+    li.appendChild(BotaoDeleta());
     ul.appendChild(li);
 }
 
@@ -32,4 +33,18 @@ function concluirTarefa(evento){
 
     const tarefaCompleta = botaoConclui.parentElement;
     tarefaCompleta.classList.toggle('done');
+}
+
+function BotaoDeleta(){
+    const botaoDeleta = document.createElement('button');
+    botaoDeleta.innerText = 'deletar';
+    botaoDeleta.addEventListener('click', deletarTarefa);
+
+    return botaoDeleta;
+}
+function deletarTarefa(evento){
+    const apagarTarefa = evento.target;
+    const tarefaCompleta = apagarTarefa.parentElement;
+    tarefaCompleta.remove();
+    return tarefaCompleta;
 }
