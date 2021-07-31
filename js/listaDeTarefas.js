@@ -1,4 +1,3 @@
-//import {BotaoConclui} from './btn-conclui.js'
 import { BotaoConclui } from "./btn-conclui.js";
 import { BotaoDeleta } from "./btn-deletar.js";
 

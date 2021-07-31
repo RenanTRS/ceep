@@ -9,5 +9,6 @@ function deletarTarefa(evento){
     const apagarTarefa = evento.target;
     const tarefaCompleta = apagarTarefa.parentElement;
     tarefaCompleta.remove();
+    
     return tarefaCompleta;
 }
