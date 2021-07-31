@@ -62,3 +62,22 @@ lista.appendChild(tarefa);
 ```
 tarefa.classList.add('task');
 ```
+
+# Aula04 - Concluir tarefa
+## Criando botão concluir:  
+- ```butoon.innerText = 'concluir';``` Usado para por o texto do botão.  
+## Concluindo tarefa:  
+- ```target``` Seu uso é mais para quando uma função dentro de outra função precisa saber qual o elemento html.  
+```
+function concluido(evento){
+	const button = evento.target;
+}
+```
+- ```parentElement``` Serve para pegar o pai do elemento html.  
+```
+const tarefaConcluida = button.parentElement;
+```
+- ```classList.toggle()``` O método **toggle** ativa ou desativa uma class, se ela estiver ativa será desativada, e se estiver desativada será ativa.
+```
+tarefaCompleta.classList.toggle('done');
+```
