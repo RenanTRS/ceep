@@ -81,3 +81,18 @@ const tarefaConcluida = button.parentElement;
 ```
 tarefaCompleta.classList.toggle('done');
 ```
+# Aula05 - Remover tarefa
+## Removendo a tarefa:  
+- ```.remove()``` Método que apaga um elemento.  
+## Criando módulos:
+- Na tag ```<script>``` acrescente o ```type= "module"```
+- Dividir o código em partes e exportar/importar apenas o necessário .  
+- **Exportar** Basta acrescentar o nome export antes da função:  
+```
+export function nomeFunction(){
+}
+```
+- **Importar**:  
+```
+import {nomeFuncao} from 'diretorio.js';
+```
