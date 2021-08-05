@@ -18,5 +18,6 @@ function teste(evento){
     ul.appendChild(li);
 }
 
+//const novaTarefa = document.querySelector('.form-button').addEventListener('click', teste);
 const novaTarefa = document.querySelector('.form-button');
 novaTarefa.addEventListener('click', teste);
