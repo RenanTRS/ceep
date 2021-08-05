@@ -5,13 +5,17 @@ function teste(evento){
     evento.preventDefault();
 
     const input = document.querySelector('.form-input').value;
-    const date = document.querySelector('[data-form-date]').value;
+    
+    const dateValue = document.querySelector('[data-form-date]').value;
+    const date = moment(dateValue);
+    const dateFormat = date.format('DD/MM/YYYY');
+    
     const ul = document.querySelector('[data-list]');
-    console.log(date);
+
     const li = document.createElement('li');
     li.classList.add('task');
 
-    const conteudo = `<p class="content">${input}</p>`;
+    const conteudo = `<p class="content">${dateFormat} * ${input}</p>`;
     li.insertAdjacentHTML('beforeend', conteudo);
 
     li.appendChild(BotaoConclui());
