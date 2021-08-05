@@ -5,8 +5,9 @@ function teste(evento){
     evento.preventDefault();
 
     const input = document.querySelector('.form-input').value;
+    const date = document.querySelector('[data-form-date]').value;
     const ul = document.querySelector('[data-list]');
-
+    console.log(date);
     const li = document.createElement('li');
     li.classList.add('task');
 
