@@ -96,3 +96,21 @@ export function nomeFunction(){
 ```
 import {nomeFuncao} from 'diretorio.js';
 ```
+
+---
+# Aula01 - Trabalhando com datas
+## Campo nova data:
+- ```<input type="datetime-local">``` - No chrome tem a funcionalidade de escolher a data em um calendário, e no firefox deve digitar manualmente.  
+- **moment.js** - Uma biblioteca js para formatar datas.  
+- D para dias, M para mês, Y para ano, h para hora, m para minutos, a para am ou pm.  
+```
+const data = moment(variavelData);
+console.log(data.format("DD/MM/YYYY hh:mm,a"));
+```
+
+- **cdnjs.com** - Site que funciona como uma rede de distribuição de bibliotecas para js.  
+- Para fazer uso do código, basta copiar o link e adicionar a tag script em cima da tag do meu código.  
+```
+<script src="https://diretoriosite.js"></script>
+<script src="js/main.js" type="module"></script>
+```
