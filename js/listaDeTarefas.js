@@ -13,6 +13,8 @@ function novoItem(event){
         input,
         dateFormat
     };
+
+    localStorage.setItem("tarefa", JSON.stringify(dados)); 
     ul.appendChild(criaTarefa(dados));
 }
 
