@@ -13,7 +13,6 @@ function novoItem(event){
         input,
         dateFormat
     };
-    //criaTarefa(dados);
     ul.appendChild(criaTarefa(dados));
 }
 
