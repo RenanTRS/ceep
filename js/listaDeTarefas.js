@@ -1,6 +1,9 @@
 import { BotaoConclui } from "./btn-conclui.js";
 import { BotaoDeleta } from "./btn-deletar.js";
 
+
+let tarefas = [];
+
 function novoItem(event){
     event.preventDefault();
     const ul = document.querySelector('[data-list]');
@@ -14,11 +17,12 @@ function novoItem(event){
         dateFormat
     };
 
-    localStorage.setItem("tarefa", JSON.stringify(dados)); 
-    ul.appendChild(criaTarefa(dados));
+    tarefas.push(dados);
+    localStorage.setItem("tarefa", JSON.stringify(tarefas)); 
+    ul.appendChild(criarTarefa(dados));
 }
 
-function criaTarefa({input, dateFormat}){
+function criarTarefa({input, dateFormat}){
     const li = document.createElement('li');
     li.classList.add('task');
 
