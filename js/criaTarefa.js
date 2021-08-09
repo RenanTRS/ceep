@@ -4,7 +4,7 @@ import { BotaoDeleta } from "./btn-deletar.js";
 export function novoItem(event){
     event.preventDefault();
     const ul = document.querySelector('[data-list]');
-    const tarefas = JSON.parse(localStorage.getItem('tarefa')) ||[];
+    const tarefas = JSON.parse(localStorage.getItem('tarefa')) ||[]; //Se não houver dados crie um array
     const input = document.querySelector('.form-input').value;
     const dateValue = document.querySelector('[data-form-date]').value;
     const date = moment(dateValue);
