@@ -114,3 +114,39 @@ console.log(data.format("DD/MM/YYYY hh:mm,a"));
 <script src="https://diretoriosite.js"></script>
 <script src="js/main.js" type="module"></script>
 ```
+
+# Aula02 - LocalStorage
+## Armazenando dados:  
+ - **sessionStorage**  Armazena o valor no navegador, porém com o reload da página o dado para o usuário é perdido, porém fica o resquício no storage enquanto durar a seção.  
+- Para armazenar valores ao navegador é preciso de uma chave e o valor, usa-se o método .setItem():  
+```
+sessionStorage.setItem("chave",  valor);
+```
+- O objeto deve ser passado como String então deve ser convertido com o método .stringfy():  
+```
+sessionStorage.setItem("tarefa", JSON.stringfy(dados))
+```
+## localStorage
+- Sua sintaxe é semelhante à do sessionStorage, apenas deve-se mudar o nome.  
+- Ao fazer o reload da página os dados para o usuário também serão perdidos, porém se sairmos e voltarmos para o site, os dados ainda estarão salvos no storage.  
+- Transforma um objeto em json.  
+```
+localStorage.setItem("key", JSON.stringfy(valor));
+```
+## Manipulando o Array:  
+- Para adicionar um valor a um array usa-se o push.  
+```
+tarefas.push(dados);
+```
+## Dados na lista:  
+**Refatorando código**
+- Criou um novo arquivo para criar tarefa.  
+- Removeu o Array tarefas para salvar direto no localStorage.  
+- Criou uma constante com o nome de tarefas.  
+```
+const tarefas = localStorage.getItem('key')
+```
+- Também é necessário transformar o json em objeto com JSON.parse().  
+```
+const tarefas = JSON.parse(localStorage.getItem('tarefas'));
+```
