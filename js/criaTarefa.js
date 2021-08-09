@@ -1,24 +1,24 @@
 import { BotaoConclui } from "./btn-conclui.js";
 import { BotaoDeleta } from "./btn-deletar.js";
 
-let tarefas = [];
-
-function novoItem(event){
+export function novoItem(event){
     event.preventDefault();
     const ul = document.querySelector('[data-list]');
+    const tarefas = JSON.parse(localStorage.getItem('tarefa')) ||[];
     const input = document.querySelector('.form-input').value;
     const dateValue = document.querySelector('[data-form-date]').value;
     const date = moment(dateValue);
     const dateFormat = date.format('DD/MM/YYYY');
-
+    
     const dados = {
         input,
         dateFormat
     };
-
-    tarefas.push(dados);
-    localStorage.setItem("tarefa", JSON.stringify(tarefas)); 
+    
+    const tarefasAtualizadas = [... tarefas, dados];
+    
     ul.appendChild(criarTarefa(dados));
+    localStorage.setItem("tarefa", JSON.stringify(tarefasAtualizadas)); 
 }
 
 function criarTarefa({input, dateFormat}){
