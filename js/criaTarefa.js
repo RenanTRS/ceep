@@ -1,9 +1,9 @@
 import { BotaoConclui } from "./btn-conclui.js";
 import { BotaoDeleta } from "./btn-deletar.js";
+import { carregaTarefa } from "./carregaTarefa.js";
 
 export function novoItem(event){
     event.preventDefault();
-    const ul = document.querySelector('[data-list]');
     const tarefas = JSON.parse(localStorage.getItem('tarefa')) ||[]; //Se não houver dados crie um array
     const input = document.querySelector('.form-input').value;
     const dateValue = document.querySelector('[data-form-date]').value;
@@ -17,11 +17,12 @@ export function novoItem(event){
     
     const tarefasAtualizadas = [... tarefas, dados];
     
-    ul.appendChild(criarTarefa(dados));
+    //ul.appendChild(criarTarefa(dados));
     localStorage.setItem("tarefa", JSON.stringify(tarefasAtualizadas)); 
+    carregaTarefa();
 }
 
-function criarTarefa({input, dateFormat}){
+export function criarTarefa({input, dateFormat}){
     const li = document.createElement('li');
     li.classList.add('task');
 
