@@ -18,8 +18,8 @@ export function novoItem(event){
     const tarefasAtualizadas = [... tarefas, dados];
     
     //ul.appendChild(criarTarefa(dados));
-    localStorage.setItem("tarefa", JSON.stringify(tarefasAtualizadas)); 
-    carregaTarefa();
+    localStorage.setItem("tarefa", JSON.stringify(tarefasAtualizadas)); //Salva as tarefas no localStorage
+    carregaTarefa(); //Mostra na tela as tarefas pendentes no localStorage
 }
 
 export function criarTarefa({input, dateFormat}){

@@ -6,6 +6,7 @@ export function carregaTarefa(){
 
     ul.innerHTML = "";
     tarefasCadastradas.forEach((tarefa)=>{
+        //forEach, para cada item deste array execute esta callback
         ul.appendChild(criarTarefa(tarefa));
     });
 }
