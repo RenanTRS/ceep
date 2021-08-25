@@ -10,9 +10,12 @@ export function novoItem(event){
     const date = moment(dateValue);
     const dateFormat = date.format('DD/MM/YYYY');
     
+    const concluida = false;
+
     const dados = {
         input,
-        dateFormat
+        dateFormat,
+        concluida
     };
     
     const tarefasAtualizadas = [... tarefas, dados];
@@ -22,14 +25,19 @@ export function novoItem(event){
     carregaTarefa(); //Mostra na tela as tarefas pendentes no localStorage
 }
 
-export function criarTarefa({input, dateFormat}){
+export function criarTarefa({input, dateFormat, concluida}, id){
     const li = document.createElement('li');
+    
+    const conteudo = `<p class="content">${dateFormat} * ${input}</p>`;
+    
+    if(concluida){
+        li.classList.add('done');
+    }
     li.classList.add('task');
 
-    const conteudo = `<p class="content">${dateFormat} * ${input}</p>`;
     li.insertAdjacentHTML('beforeend', conteudo);
 
-    li.appendChild(BotaoConclui());
+    li.appendChild(BotaoConclui(carregaTarefa, id));
     li.appendChild(BotaoDeleta());
     return li;
 }
