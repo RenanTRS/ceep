@@ -9,12 +9,14 @@ export function novoItem(event){
     const dateValue = document.querySelector('[data-form-date]').value;
     const date = moment(dateValue);
     const dateFormat = date.format('DD/MM/YYYY');
+    const horario = date.format('HH:mm');
     
     const concluida = false;
 
     const dados = {
         input,
         dateFormat,
+        horario,
         concluida
     };
     
@@ -25,10 +27,10 @@ export function novoItem(event){
     carregaTarefa(); //Mostra na tela as tarefas pendentes no localStorage
 }
 
-export function criarTarefa({input, dateFormat, concluida}, id){
+export function criarTarefa({input, horario, concluida}, id){
     const li = document.createElement('li');
     
-    const conteudo = `<p class="content">${dateFormat} * ${input}</p>`;
+    const conteudo = `<p class="content">${horario} * ${input}</p>`;
     
     if(concluida){
         li.classList.add('done');
@@ -38,6 +40,6 @@ export function criarTarefa({input, dateFormat, concluida}, id){
     li.insertAdjacentHTML('beforeend', conteudo);
 
     li.appendChild(BotaoConclui(carregaTarefa, id));
-    li.appendChild(BotaoDeleta());
+    li.appendChild(BotaoDeleta(carregaTarefa, id));
     return li;
 }

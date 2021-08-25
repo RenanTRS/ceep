@@ -150,3 +150,10 @@ const tarefas = localStorage.getItem('key')
 ```
 const tarefas = JSON.parse(localStorage.getItem('tarefas'));
 ```
+
+# Aula05
+## Deletando tarefa:  
+- O procedimento é simples porém complexo em alguns detalhes.
+- Deve-se pegar o objeto do localStorage mas sem criar array com o "|| []".  
+- index deve receber o id.  
+- Depois alterar o array inicial com array.splice(index, 1). Sim array, pois quando criamos o localStorage o colocamos em formato de array para ir acumulando, não criando um array o localStorage é sobreposto por um novo.  
